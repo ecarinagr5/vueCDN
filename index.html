@@ -10,6 +10,7 @@
   <body>
     <div id="app">
       <h1>{{ titulo }}</h1>
+      <p>Mi saldo disponible es: {{ cantidad }}</p>
       <a v-bind:href="enlace">ir al enlace</a><br />
       <a :href="enlace">idos</a>
 
@@ -34,6 +35,18 @@
           {{index + 1}} - {{ item }}
         </li>
       </ul>
+
+      <hr />
+
+      <button v-on:click="agregarSaldo">Agregar saldo</button><br />
+      <br />
+      <button @click="agregarSaldo">Agregar saldo</button>
+
+      <hr />
+
+      <button @click="disminuirSaldo" :disabled="desactivar">
+        Disminuir saldo
+      </button>
     </div>
     <script src="main.js"></script>
     <script>
